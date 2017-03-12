@@ -182,8 +182,11 @@ app.get('*', function(req, res){
 // will print stacktrace
 if (process.env.DEV === 'development') {
   app.use(function(err, req, res, next) {
-    req.flash('errors', { msg: 'Error' });
-    return res.redirect('/');
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
   });
 }
 
