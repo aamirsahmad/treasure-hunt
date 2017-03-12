@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Scoreboard
+  hr
+
+  .table-responsive
+  table.table.table-hover
+    thead
+      tr.active
+        th Team
+        th Total
+    tbody
+      each val in teamsObj
+        tr
+          td #{val.name}
+          td #{val.total}

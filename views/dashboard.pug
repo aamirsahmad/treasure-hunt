@@ -1,0 +1,65 @@
+extends layout
+
+block content
+    h1 Dashboard
+    hr
+    .row
+      .col-sm-3
+        .panel.panel-danger
+          .panel-heading
+            h3.panel-title Time remaining
+          .panel-body
+            #clockdiv
+              span.days
+              |  : 
+              span.hours
+              |  : 
+              span.minutes
+              |  : 
+              span.seconds
+              |  
+              
+      .col-sm-9
+        .panel.panel-info
+          .panel-heading
+            h3.panel-title Announcements
+          .panel-body  @batman hey, I am back
+
+    .row
+    .panel.panel-primary
+      .panel-heading
+        h3.panel-title Team Summary
+      .panel-body
+        table.table.table-striped
+          thead
+            tr
+              th Name
+              th Score
+              th Code
+          tbody
+            tr
+              td #{teamName}
+              td #{teamScore}
+              td #{teamCode}
+        p.strong Team Players      
+        ul.list-group
+          each val in teamPlayers
+            li.list-group-item= val
+
+    h3 Total team progress
+    .progress.progress-striped
+      .progress-bar.progress-bar-success(style={width: teamScorePer})
+
+    each val1, index in teamChallenges
+      .jumbotron
+        h3 Challenge #{index}
+        if val1
+          p
+            | Completed: 
+            span.label.label-success YES
+        else
+          p
+            | Completed: 
+            span.label.label-danger NO
+        p
+          a.btn.btn-lg.btn-primary(href='/challenge/' + index) Go for it!
