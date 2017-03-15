@@ -11,6 +11,7 @@ block content
   hr
   form.form-horizontal(method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
+    input(type='hidden', name='challengenum', value=title)
     .form-group
       label.col-sm-3.control-label(for='code') Code
       .col-sm-7

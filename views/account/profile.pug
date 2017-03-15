@@ -13,16 +13,11 @@ block content
     .form-group
       label.col-sm-3.control-label(for='name') Name
       .col-sm-7
-        input.form-control(type='text', name='name', id='name', value=user.profile.name)
+        input.form-control(type='text', name='name', id='name', value=user.profile.name, disabled='')
     .form-group
       label.col-sm-3.control-label(for='team') Team
       .col-sm-7
         input.form-control(type='text', name='team', id='team', value=user.team, disabled='')
-    .form-group
-      .col-sm-offset-3.col-sm-4
-        button.btn.btn.btn-primary(type='submit')
-          i.fa.fa-pencil
-          | Update Profile
 
   .page-header
     h3 Delete Account

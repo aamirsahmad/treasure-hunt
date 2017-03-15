@@ -1,6 +1,15 @@
 extends layout
 
 block content
+    if teamName == 'No team'
+      .alert.alert-dismissible.alert-warning
+        button.close(type='button', data-dismiss='alert') &times;
+        h4 Warning!
+        p
+          | You are not any team yet, to join or create one go to 
+          a.alert-link(href='/join') JOIN TEAM
+          | .
+
     h1 Dashboard
     hr
     .row

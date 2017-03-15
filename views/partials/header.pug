@@ -11,8 +11,12 @@
         | Treasure Hunt
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        li(class=(title == 'Home') ? 'active' : undefined)
-          a(href='/') Home
+        if user
+          li(class=(title == 'Dashboard') ? 'active' : undefined)
+            a(href='/') Dashboard
+        else
+          li(class=(title == 'Home') ? 'active' : undefined)
+            a(href='/') Home          
         li(class=(title == 'Scoreboard') ? 'active' : undefined)
           a(href='/scoreboard') Scoreboard
         li(class=(title == 'FAQ') ? 'active' : undefined)

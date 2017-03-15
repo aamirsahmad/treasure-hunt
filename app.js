@@ -120,24 +120,10 @@ app.get('/', homeController.index);
 app.get('/faqs', homeController.getFaqs);
 app.get('/scoreboard', homeController.getScoreboard);
 app.get('/challenge/:cnum', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.getChallengePage);
-app.post('/challenge/0', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/1', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/2', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/3', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/4', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/5', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/6', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/7', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/8', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/9', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
-app.post('/challenge/10', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
+app.post('/challenge/:cnum', passportConfig.isAuthenticated, passportConfig.isJoined, challengeController.postChallengePage);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
-app.get('/forgot', userController.getForgot);
-app.post('/forgot', userController.postForgot);
-app.get('/reset/:token', userController.getReset);
-app.post('/reset/:token', userController.postReset);
 app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
@@ -147,6 +133,7 @@ app.get('/join', passportConfig.isAuthenticated, teamController.getJoin);
 app.post('/join', passportConfig.isAuthenticated, teamController.postJoin);
 app.get('/create', passportConfig.isAuthenticated, teamController.getCreate);
 app.post('/create', passportConfig.isAuthenticated, teamController.postCreate);
+app.get('/finish', passportConfig.isAuthenticated, homeController.getFinish);
 
 /**
  * API examples routes.

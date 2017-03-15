@@ -66,8 +66,7 @@ const _ = require('lodash');
  * Challenge page.
  */
  exports.postChallengePage = (req, res, next) => {
-  let num = req.path.charAt(req.path.length - 1);
-  console.log(req.body);
+  let num = req.body.challengenum.match(/[0-9]*$/)[0];
   Challenge.findOne({ 'num': num }, function (err, challenge) {
     if (err) {
       console.log(err);

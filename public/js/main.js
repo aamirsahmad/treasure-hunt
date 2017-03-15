@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var deadline = 'March 20 2017 18:00:00 GMT-04:00';
+	var deadline = 'March 22 2017 00:00:00 GMT-04:00';
 	initializeClock('clockdiv', deadline);
 
 });
@@ -36,7 +36,7 @@ function initializeClock(id, endtime) {
         secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
         if (t.total <= 0) {
-            clearInterval(timeinterval);
+            window.location = 'http://localhost:3000/finish';
         }
     }
 

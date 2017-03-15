@@ -88,3 +88,13 @@ exports.getFaqs = (req, res) => {
 		title: 'FAQs',
 	});
 };
+
+/**
+* GET /
+* Finish page.
+*/
+exports.getFinish = (req, res) => {
+	req.logout();
+	req.flash('errors', { msg: 'Treasure Hunt has come to an end. Thank you for participating.' });
+  	res.redirect('/');
+};
