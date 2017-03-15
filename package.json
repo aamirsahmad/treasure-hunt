@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "postinstall": "npm rebuild node-sass"
   },
   "repository": {
     "type": "git",
