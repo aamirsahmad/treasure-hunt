@@ -142,6 +142,10 @@ const _ = require('lodash');
       req.flash('errors', { msg: 'Unexpected Error Occurred. Contact Webmaster ASAP.' });
       return res.redirect('/');
     }
-    res.json(challenge.code);
+    if(!c){
+      req.flash('errors', { msg: 'Challenge does not exists' });
+      return res.redirect('/');
+    }
+    return res.json(challenge.code);
   });
  };
