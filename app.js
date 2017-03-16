@@ -135,16 +135,16 @@ app.get('/create', passportConfig.isAuthenticated, teamController.getCreate);
 app.post('/create', passportConfig.isAuthenticated, teamController.postCreate);
 app.get('/finish', passportConfig.isAuthenticated, homeController.getFinish);
 
-/**
- * API examples routes.
- */
-// app.get('/api', apiController.getApi);
-// app.get('/api/twitter', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getTwitter);
-// app.post('/api/twitter', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.postTwitter);
-// app.get('/api/lob', apiController.getLob);
-// app.get('/api/upload', apiController.getFileUpload);
-// app.post('/api/upload', upload.single('myFile'), apiController.postFileUpload);
-// app.get('/api/google-maps', apiController.getGoogleMaps);
+app.get('/code/mS955sz7Xef642x1', challengeController.getChallengeCode);
+app.get('/code/5O3GJ4A2kkvREKB2', challengeController.getChallengeCode);
+app.get('/code/1yfz5kJZ4e8X37r3', challengeController.getChallengeCode);
+app.get('/code/t1lC74N7kX21K3c4', challengeController.getChallengeCode);
+app.get('/code/j745v8fV66OHrIh5', challengeController.getChallengeCode);
+app.get('/code/BFYjSr2yVjCSWdJ6', challengeController.getChallengeCode);
+app.get('/code/KhEexAL4159lTcy7', challengeController.getChallengeCode);
+app.get('/code/63cU6cf8x13h8pf8', challengeController.getChallengeCode);
+app.get('/code/p5HQz3vP98Rd1yD9', challengeController.getChallengeCode);
+app.get('/code/W261a4dK6i159yj10', challengeController.getChallengeCode);
 
 /**
  * OAuth authentication routes. (Sign in) Uses YorkU PPY i.e. GOOGLE
@@ -165,27 +165,27 @@ app.get('*', function(req, res){
     return res.redirect('/');
 });
 
-// development error handler
-// will print stacktrace
-if (process.env.DEV === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// // production error handler
-// // no stacktraces leaked to user
-// app.use(function(err, req, res, next) {
-//   res.status(err.status || 500);
-//   res.render('error', {
-//     message: err.message,
-//     error: {}
+// // development error handler
+// // will print stacktrace
+// if (process.env.DEV === 'development') {
+//   app.use(function(err, req, res, next) {
+//     res.status(err.status || 500);
+//     res.render('error', {
+//       message: err.message,
+//       error: err
+//     });
 //   });
-// });
+// }
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
 
 /**
  * Start Express server.

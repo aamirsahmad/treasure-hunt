@@ -32,7 +32,7 @@ block content
         .panel.panel-info
           .panel-heading
             h3.panel-title Announcements
-          .panel-body  @batman hey, I am back
+          .panel-body  !{tweet}
 
     .row
     .panel.panel-primary
@@ -59,6 +59,8 @@ block content
     .progress.progress-striped
       .progress-bar.progress-bar-success(style={width: teamScorePer})
 
+    .well.well-sm.text-warning NOTE: YOUR TEAM WILL BE DISQUALIFIED IF YOU TAKE DOWN THE QR CODES
+    // ===> <CODE_START>Tpc09oGG0zx9X656o17993C40Oln2817948z17JMD<CODE_END> <===
     each val1, index in teamChallenges
       .jumbotron
         h3 Challenge #{index}

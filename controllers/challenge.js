@@ -25,14 +25,15 @@ const _ = require('lodash');
     }
     else{
       // Locked Challenge
-      if(nnum > 8){
+      if(nnum > 0){ // change num to start locked challenges from that num
         Team.findOne({code: req.user.team}, (err, team) => {
           if (err) {
             console.log(err);
             req.flash('errors', { msg: 'Unexpected Error Occurred. Contact Webmaster ASAP.' });
             return res.redirect('/');
           }
-          var isCompleted = team.challenges[nnum - 1];
+          //var isCompleted = team.challenges[nnum - 1]; for locked challenges
+          var isCompleted = team.challenges[0];
           if(isCompleted){
             res.render('challenges', {
               title: 'Challenge ' + num,
@@ -117,3 +118,30 @@ const _ = require('lodash');
     }
   });
 };
+
+/**
+ * GET /
+ * Challenge Code.
+ */
+ exports.getChallengeCode = (req, res) => {
+  var uri = req.path.split('/')[2];
+  var c;
+  if (uri === 'mS955sz7Xef642x1') c = 1;
+  else if (uri === '5O3GJ4A2kkvREKB2') c = 2;
+  else if (uri === '1yfz5kJZ4e8X37r3') c = 3;
+  else if (uri === 't1lC74N7kX21K3c4') c = 4;
+  else if (uri === 'j745v8fV66OHrIh5') c = 5;
+  else if (uri === 'BFYjSr2yVjCSWdJ6') c = 6;
+  else if (uri === 'KhEexAL4159lTcy7') c = 7;
+  else if (uri === '63cU6cf8x13h8pf8') c = 8;
+  else if (uri === 'p5HQz3vP98Rd1yD9') c = 9;
+  else if (uri === 'W261a4dK6i159yj10') c = 10;
+  Challenge.findOne({ 'num': c }, function (err, challenge) {
+    if (err) {
+      console.log(err);
+      req.flash('errors', { msg: 'Unexpected Error Occurred. Contact Webmaster ASAP.' });
+      return res.redirect('/');
+    }
+    res.json(challenge.code);
+  });
+ };
