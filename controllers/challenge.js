@@ -146,6 +146,8 @@ const _ = require('lodash');
       req.flash('errors', { msg: 'Challenge does not exists' });
       return res.redirect('/');
     }
-    return res.json(challenge.code);
+    else{
+      return res.json(challenge.code);
+    }
   });
  };
