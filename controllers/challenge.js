@@ -138,11 +138,10 @@ const _ = require('lodash');
   else if (uri === 'W261a4dK6i159yj10') c = 10;
   Challenge.findOne({ 'num': c }, function (err, challenge) {
     if (err) {
-      console.log(err);
       req.flash('errors', { msg: 'Unexpected Error Occurred. Contact Webmaster ASAP.' });
       return res.redirect('/');
     }
-    if(!c){
+    if(!challenge){
       req.flash('errors', { msg: 'Challenge does not exists' });
       return res.redirect('/');
     }
