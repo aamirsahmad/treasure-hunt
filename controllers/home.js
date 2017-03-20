@@ -15,7 +15,7 @@ const T = new Twit({
 * Home page.
 */
 exports.index = (req, res) => {
-	var fullScore = 600;
+	var fullScore = 666;
 	var challengesObj = {
 		'0': false,
 		'1': false,
