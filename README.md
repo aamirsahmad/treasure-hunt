@@ -1,5 +1,7 @@
 # treasure-hunt
-Treasure Hunt webapp that uses NodeJS, ExpressJS and MongoDB for CSHUB's treasure hunt
+Universal Treasure Hunt webapp that uses NodeJS, ExpressJS and MongoDB for CSHUB's treasure hunt
+
+![alt text](http://i.imgur.com/gsKdcJT.png "Treasure Hunt Landing Page")
 
 ## Installation
 
@@ -8,21 +10,25 @@ Treasure Hunt webapp that uses NodeJS, ExpressJS and MongoDB for CSHUB's treasur
     1. git clone https://github.com/aamirsahmad/treasure-hunt.git
     2. cd treasure-hunt
     3. npm install
-    4. Setup Google OAuth keys, put them in .env.primary
-    5. node app.js
-    6. http://localhost:3000
+    4. Setup MongoDB
+    5. Create '.env.primary' and put MongoDB & Google OAuth keys
+    6. node app.js
+    7. http://localhost:3000
 
 ### Deploying on Heroku ###
 ----------
     After following step 1 to 4 from above
-    1. Create "ProcFile"
-    2. Setup and configure MongoDB in .env.primary
+    1. Create and configure "ProcFile"
+    2. Setup and configure MongoDB in '.env.primary' or use the NODE.ENV variables in Heroku portal 
     3. Use git to push to heroku master 
 
 ## To Do
 
-- Add more challenges and levels
 - Admin panel
+- Catagories for challenges
+- Add more challenges and levels
+- Relative scoring
+- Improve score representation (graphs)
 
 ## Contributing
 
